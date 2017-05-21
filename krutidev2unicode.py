@@ -551,7 +551,7 @@ def kru2uni(kru_text):
     # Uncomment, if input is Sanskrit
     kru_text = kru_text.replace('\u094d ', ' ')
 
-    return kru_text.encode('utf-8')
+    return kru_text
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = 'Krutidev2Unicode Font Convertor')
@@ -560,4 +560,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     for line in args.input_file:
-        args.output_file.write(kru2uni(line).decode('utf-8'))
+        args.output_file.write(kru2uni(line))
