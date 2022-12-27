@@ -491,7 +491,7 @@ def kru2uni(kru_text):
     kru_text = kru_text.replace(u' z', u'z')
 
     # – and — if not surrounded by krutidev consonants/matrās, change them to -
-    misplaced = re.compile(ur'[\u2014\u2013]')
+    misplaced = re.compile(r'[\u2014\u2013]')
     for m in misplaced.finditer(kru_text):
         index = m.start()
         if index < len(kru_text) - 1 and kru_text[m.start() + 1] not in krutidev_consonants + krutidev_unattached_vowel_signs:
